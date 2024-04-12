@@ -13,7 +13,6 @@ export class FooterComponent {
     const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 0;
     const documentHeight = document.documentElement.scrollHeight || document.body.scrollHeight || 0;
-    // Si el scroll alcanza el final de la página o está cerca de hacerlo, muestra el footer
     this.isFooterVisible = scrollOffset + windowHeight >= documentHeight - 50;
   }
 }

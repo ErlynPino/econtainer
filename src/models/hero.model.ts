@@ -15,6 +15,5 @@ export interface Hero {
       firstAppearance: string;
       publisher: string;
     };
-    // Agrega más propiedades según sea necesario
   }
   
