@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeroePosterComponent } from './components/heroe-poster/heroe-poster.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HeroDetailsComponent } from './pages/hero-details/hero-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    HeroePosterComponent
+    HeroePosterComponent,
+    HeroDetailsComponent
   ],
   imports: [
     BrowserModule,

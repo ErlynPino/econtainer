@@ -6,4 +6,7 @@
 }
 .navbar img{
     left: 157px;
+    width:250px; 
+    height:65px;
+    cursor: pointer;
 }

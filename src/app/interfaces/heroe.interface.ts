@@ -6,7 +6,7 @@ export interface HeroesResponse {
     slug:        string;
     powerstats:  Powerstats;
     appearance:  Appearance;
-    biography:   Biography;
+    biography:   HeroDetails;
     work:        Work;
     connections: Connections;
     images:      Images;
@@ -27,7 +27,7 @@ export enum Gender {
     Male = "Male",
 }
 
-export interface Biography {
+export interface HeroDetails {
     fullName:        string;
     alterEgos:       string;
     aliases:         string[];

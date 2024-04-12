@@ -17,7 +17,7 @@
     <div class="row row-cols-1 row-cols-md-4 g-4 margin-bottom-cards">
         <div class="col" *ngFor="let hero of filteredSuperheroes">
             <div class="card h-100">
-                <img [src]="hero.images.sm" alt="{{ hero.name }}">
+                <img [src]="hero.images.sm" alt="{{ hero.name }}" [routerLink]="['/hero-details', hero.id]">
                 <div class="card-body">
                     <h5 class="card-title text-center blue-title">{{ hero.name }}</h5>
                     <ul class="list-unstyled">
@@ -31,7 +31,4 @@
             </div>
         </div>
     </div>
-</div>
-<div class="margin-button mt-5">
-    <app-footer></app-footer>
 </div>

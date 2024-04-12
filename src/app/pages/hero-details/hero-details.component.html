@@ -1,0 +1,9 @@
+<div *ngIf="heroDetails">
+    <h2>{{ heroDetails.name }}</h2>
+    <img [src]="heroDetails.images.lg" alt="{{ heroDetails.name }}" class="img-fluid">
+    <p><strong>Full Name:</strong> {{ heroDetails.biography.fullName }}</p>
+    <p><strong>Alter Egos:</strong> {{ heroDetails.biography.alterEgos }}</p>
+    <!-- Agrega más detalles según sea necesario -->
+  </div>
+  
+
