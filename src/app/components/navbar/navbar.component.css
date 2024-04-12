@@ -1,3 +1,9 @@
 .navbar{
+    top: 0px;
+    
+    height: 100px;
     background-color: #F8F8F8;
+}
+.navbar img{
+    left: 157px;
 }

@@ -8,6 +8,8 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeroePosterComponent } from './components/heroe-poster/heroe-poster.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { FooterComponent } from './components/footer/footer.component';
     BuscarComponent,
     HomeComponent,
     HeroeComponent,
-    FooterComponent
+    FooterComponent,
+    HeroePosterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
