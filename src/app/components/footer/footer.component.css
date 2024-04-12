@@ -1,0 +1,18 @@
+.footer {
+    background-color: #f8f9fa; /* Color de fondo del footer */
+    padding: 20px 0; /* Espaciado interno superior e inferior */
+    position: fixed; /* Fijar el footer en la parte inferior de la pantalla */
+    width: 100%; /* Ancho completo */
+    bottom: 0; /* Alinear al fondo */
+    transition: transform 0.3s ease; /* Agregar una transición para suavizar los cambios de visibilidad */
+    transform: translateY(100%); /* Ocultar inicialmente el footer fuera de la pantalla */
+  }
+  
+  .footer.visible {
+    transform: translateY(0); /* Mostrar el footer moviéndolo a su posición normal */
+  }
+  
+  .footer-logo {
+    max-width: 100px; /* Ancho máximo del logo */
+  }
+  

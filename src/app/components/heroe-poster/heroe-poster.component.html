@@ -1,17 +1,37 @@
-<div class="row row-cols-1 row-cols-md-4 g-4">
-    <div class="col" *ngFor="let hero of superheroes">
-        <div class="card h-100" >
-            <img [src]="hero.images.sm" alt="{{ hero.name }}">
-            <div class="card-body">
-                <h5 class="card-title text-center blue-title">{{ hero.name }}</h5>
-                <ul class="list-unstyled">
-                    <li>intelligence: <strong>{{ hero.powerstats.intelligence }}</strong></li>
-                    <li>speed: <strong>{{ hero.powerstats.speed }}</strong></li>
-                    <li>power: <strong>{{ hero.powerstats.strength }}</strong></li>
-                    <li>Gender: <strong>{{ hero.powerstats.durability }}</strong></li>
-                    <li>Race: <strong>{{ hero.powerstats.durability }}</strong></li>
-                </ul>
+<div class="container mt-8 mb-5">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-6">
+            <div class="input-group mb-4">
+                <input type="text" class="form-control" placeholder="Buscar Superhéroe" [(ngModel)]="searchQuery">
+                <img src="../../../assets/component (3).png" alt="Buscar" class="img-fluid transparent-button position-absolute top-50 start-100 translate-middle-y" (click)="searchSuperheroes()">
             </div>
         </div>
     </div>
+    <div class="row justify-content-center" *ngIf="showNoResultsMessage">
+        <div class="col-md-6">
+            <div class="alert alert-warning text-center" role="alert">
+                No se encontraron resultados.
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4 margin-bottom-cards">
+        <div class="col" *ngFor="let hero of filteredSuperheroes">
+            <div class="card h-100">
+                <img [src]="hero.images.sm" alt="{{ hero.name }}">
+                <div class="card-body">
+                    <h5 class="card-title text-center blue-title">{{ hero.name }}</h5>
+                    <ul class="list-unstyled">
+                        <li>Intelligence: <strong>{{ hero.powerstats.intelligence }}</strong></li>
+                        <li>Speed: <strong>{{ hero.powerstats.speed }}</strong></li>
+                        <li>Power: <strong>{{ hero.powerstats.power }}</strong></li>
+                        <li>Strength: <strong>{{ hero.powerstats.strength }}</strong></li>
+                        <li>Combat: <strong>{{ hero.powerstats.combat }}</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="margin-button mt-5">
+    <app-footer></app-footer>
 </div>
