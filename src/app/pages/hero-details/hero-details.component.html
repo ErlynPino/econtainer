@@ -1,9 +1,29 @@
-<div *ngIf="heroDetails">
-    <h2>{{ heroDetails.name }}</h2>
-    <img [src]="heroDetails.images.lg" alt="{{ heroDetails.name }}" class="img-fluid">
-    <p><strong>Full Name:</strong> {{ heroDetails.biography.fullName }}</p>
-    <p><strong>Alter Egos:</strong> {{ heroDetails.biography.alterEgos }}</p>
-    <!-- Agrega más detalles según sea necesario -->
-  </div>
-  
+<div class="card mb-3" style="max-width: 100; margin-top: 40px;" *ngIf="heroDetails">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img [src]="heroDetails.images.lg" class="img-thumbnail" alt="{{ heroDetails.name }}" >
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h1 class="card-title text-center">{{heroDetails.biography.fullName}} - <small>{{heroDetails.biography.aliases}}</small></h1>
+                <p class="card-text mt-5"><strong>Work: </strong> {{heroDetails.work.occupation}}</p>
 
+                <ul class="list-unstyled">
+                    <li><strong>AlterEgo: </strong> {{heroDetails.biography.alterEgos}}</li>
+                    <li><strong>PlacecOfBirth: </strong>{{heroDetails.biography.placeOfBirth}}</li>
+                    <li><strong>Publisher: </strong>{{heroDetails.biography.publisher}}</li>
+                    <li><strong>Relatives: </strong>{{heroDetails.connections.relatives}}</li>
+                    <li><strong>GroupAffiliation: </strong>{{heroDetails.connections.groupAffiliation}}</li>
+                </ul>
+
+                <p class="card-text ">FirstAppearance: <small class="text-body-secondary">{{heroDetails.biography.firstAppearance}}</small></p> 
+
+                <div class="row mt-3">
+                    <div class="col mb-2">
+                        <button class="btn btn-outline-info float-right" (click)="regresar()">Regresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

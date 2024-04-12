@@ -22,36 +22,41 @@ export class HeroePosterComponent implements OnInit {
   getSuperheroes(): void {
     this.heroesService.getSuperheroes().subscribe(
       (data: HeroesResponse[]) => {
-        this.filteredSuperheroes = data.slice(0, 20);
-        this.originalSuperheroes = data.slice(0, 20); // Guardar la lista original
-        this.searchQuery = ''; // Limpiar el campo de búsqueda
+        const shuffledHeroes = this.shuffleArray(data);
+        this.filteredSuperheroes = shuffledHeroes.slice(0, 20);
+        this.originalSuperheroes = this.filteredSuperheroes.slice(); 
+        this.searchQuery = '';
       },
       (error) => {
         console.error('Error al obtener los superhéroes:', error);
       }
     );
   }
+  
+  shuffleArray(array: any[]): any[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
   searchSuperheroes(): void {
-    // Realizar la búsqueda solo si hay algo escrito en el campo de búsqueda
+    
     if (this.searchQuery.trim()) {
       this.filteredSuperheroes = this.originalSuperheroes.filter(hero =>
         hero.name.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     } else {
-      // Restablecer la lista original si el campo de búsqueda está vacío
       this.filteredSuperheroes = this.originalSuperheroes.slice();
     }
-
-    // Mostrar mensaje si no hay resultados
+    
     this.showNoResultsMessage = this.filteredSuperheroes.length === 0;
-
-    // Restablecer la lista original después de 3 segundos si no hay resultados
     if (this.showNoResultsMessage) {
       setTimeout(() => {
         this.filteredSuperheroes = this.originalSuperheroes.slice();
         this.showNoResultsMessage = false;
-        this.searchQuery = ''; // Limpiar el campo de búsqueda
+        this.searchQuery = ''; 
       }, 3000);
     }
   }

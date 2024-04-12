@@ -29,4 +29,8 @@ export class HeroDetailsComponent implements OnInit {
       console.error('ID not found in URL parameter.');
     }
   }
+
+  regresar(){
+    window.history.back();
+  }
 }

@@ -11,7 +11,6 @@ import { HeroDetails } from '../interfaces/heroDetail';
 export class HeroesService {
 
   private URL = 'https://akabab.github.io/superhero-api/api';
-  private URLDetail = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api'
 
   constructor(private http: HttpClient) { }
 
@@ -28,7 +27,7 @@ export class HeroesService {
   }
 
   getHeroDetails(id: number): Observable<HeroDetails> {
-    const url = `${this.URLDetail}/id/${id}.json`;
+    const url = `${this.URL}/id/${id}.json`;
     return this.http.get<HeroDetails>(url);
   }
 
