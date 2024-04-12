@@ -2,8 +2,10 @@
     <div class="row justify-content-center mt-3">
         <div class="col-md-6">
             <div class="input-group mb-4">
-                <input type="text" class="form-control" placeholder="Buscar Superhéroe" [(ngModel)]="searchQuery">
-                <img src="../../../assets/component (3).png" alt="Buscar" class="img-fluid transparent-button position-absolute top-50 start-100 translate-middle-y" (click)="searchSuperheroes()">
+                <input type="text" class="form-control" placeholder="Buscar Personaje" [(ngModel)]="searchQuery">
+                <button class="btn btn-light border-0 border-top border-right border-bottom" type="button" (click)="searchSuperheroes()">
+                    <img src="../../../assets/component (3).png" alt="Buscar" class="img-fluid">
+                </button>
             </div>
         </div>
     </div>
